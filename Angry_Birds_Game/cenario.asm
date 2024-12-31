@@ -212,7 +212,7 @@ espacoestl:
 	sw $9, 0($19) #armazena no endereço $12(calculado na rotina)
 
 stilingue5:
-	beq $15, $0, fim
+	beq $15, $0, bloco1
 	lui $4, 0x1001
 	addi $19, $19, 508
 	ori $9, $0, 0x8b4513
@@ -222,6 +222,57 @@ stilingue5:
 	sw $9, 0($19) #armazena no endereço $12(calculado na rotina)
 	addi $15, $15, -1
 	j stilingue5
+bloco1:
+	lui $4, 0x1001
+	addi $5, $0, 4 #linha em que quer que ponto esteja (l)
+	addi $6, $0, 1024 #quantidade de UG de linhas (L)
+	addi $7, $0, 72 #quantidade de colunas até chegar no ponto
+	addi $15, $0, 15
+	jal endpxy9
+	ori $9, $0, 0xd2691e
+	sw $9, 0($20) #armazena no endereço $12(calculado na rotina)
+	addi $20, $20, 4
+	ori $9, $0, 0xd2691e
+	sw $9, 0($20) #armazena no endereço $12(calculado na rotina)
+	j blocop1
+
+blocop1:
+	beq $15, $0, blocopp2
+	lui $4, 0x1001
+	addi $20, $20, 508
+	ori $9, $0, 0xd2691e
+	sw $9, 0($20) #armazena no endereço $12(calculado na rotina)
+	addi $20, $20, 4
+	ori $9, $0, 0xd2691e
+	sw $9, 0($20) #armazena no endereço $12(calculado na rotina)
+	addi $15, $15, -1
+	j blocop1
+	
+blocopp2:
+	lui $4, 0x1001
+	addi $5, $0, 4 #linha em que quer que ponto esteja (l)
+	addi $6, $0, 1024 #quantidade de UG de linhas (L)
+	addi $7, $0, 92 #quantidade de colunas até chegar no ponto
+	addi $15, $0, 15
+	jal endpxy10
+	ori $9, $0, 0xd2691e
+	sw $9, 0($21) #armazena no endereço $12(calculado na rotina)
+	addi $21, $21, 4
+	ori $9, $0, 0xd2691e
+	sw $9, 0($21) #armazena no endereço $12(calculado na rotina)
+	j blocop2
+
+blocop2:
+	beq $15, $0, fim
+	lui $4, 0x1001
+	addi $21, $21, 508
+	ori $9, $0, 0xd2691e
+	sw $9, 0($21) #armazena no endereço $12(calculado na rotina)
+	addi $21, $21, 4
+	ori $9, $0, 0xd2691e
+	sw $9, 0($21) #armazena no endereço $12(calculado na rotina)
+	addi $15, $15, -1
+	j blocop2
 	
 	addi $2, $0, 10
 fim:	syscall
@@ -294,3 +345,18 @@ endpxy8:
 fimendpxy8:
 	jr $31 #fim da rotinha
 	
+endpxy9:
+	mul $8, $5, $6 # 8= l*L
+	add $8, $8, $7 #$8 = l*L+c
+	sll $8, $8, 2 # $8 = (l * L +c) *4
+	add $20, $8, $4 # $2 = $8 +&p
+fimendpxy9:
+	jr $31 #fim da rotinha
+	
+endpxy10:
+	mul $8, $5, $6 # 8= l*L
+	add $8, $8, $7 #$8 = l*L+c
+	sll $8, $8, 2 # $8 = (l * L +c) *4
+	add $21, $8, $4 # $2 = $8 +&p
+fimendpxy10:
+	jr $31 #fim da rotinha
