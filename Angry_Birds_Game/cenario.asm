@@ -23,7 +23,7 @@ grama:
 	addi $6, $0, 1024 #quantidade de UG de linhas (L)
 	addi $7, $0, 0 #quantidade de colunas até chegar no ponto
 	jal endpxy
-	ori $9, $0 0x3cb371 
+	ori $9, $0 0x3CB371
 	sw $9, 0($2) #armazena no endereço $2(calculado na rotina)
 	
 	addi $20, $0, 0
@@ -49,12 +49,12 @@ efeitog:
 	jal endpxy4
 
 dgrama1:beq $13, $0, dgrama2
-	ori $9, $0, 0x6400
-	sw $9, 0($14) #armazena no endereço $2(calculado na rotina)
-	addi $14, $14, 4
-	ori $9, $0, 0x2e8b57
+	ori $9, $0, 0x2E8B57
 	sw $9, 0($14) #armazena no endereço $2(calculado na rotina)
 	addi $14, $14, 8
+	ori $9, $0, 0x006400
+	sw $9, 0($14) #armazena no endereço $2(calculado na rotina)
+	addi $14, $14, 16
 	addi $13, $13, -1
 	j dgrama1
 
@@ -67,15 +67,15 @@ dgrama2:
 	jal endpxy
 	
 loop:	beq $13, $0, barro
-	ori $9, $0, 0x3cb371
+	ori $9, $0, 0x3cb371 
 	sw $9, 0($14) #armazena no endereço $2(calculado na rotina)
 	addi $14, $14, 4
-	ori $9, $0, 0x6400
+	ori $9, $0, 0x32cd32
 	sw $9, 0($14) #armazena no endereço $2(calculado na rotina)
 	addi $14, $14, 8
 	ori $9, $0, 0x32cd32
 	sw $9, 0($14) #armazena no endereço $2(calculado na rotina)
-	addi $14, $14, 4
+	addi $14, $14, 16
 	addi $13, $13, -1
 	j loop
 
@@ -94,14 +94,52 @@ barro:
 test3:	beq $20, $0, linha4
 	sw  $9, 0($11)
 	addi $11, $11, 4
+	ori $9, $0, 0xcd853f
+	sw $9, 0($11) #armazena no endereço $2(calculado na rotina)
+	
 	addi $20, $20, -1
 	j test3
 linha4:
-	beq $21, $0, stilingue1
+	beq $21, $0, efbarro
 	sw  $9, 0($11)
 	addi $11, $11, 4
 	addi $21, $21, -1
 	j linha4
+efbarro:
+	lui $4, 0x1001
+	addi $5, $0, 7 #linha em que quer que ponto esteja (l)
+	addi $6, $0, 1024 #quantidade de UG de linhas (L)
+	addi $7, $0, 0 #quantidade de colunas até chegar no ponto
+	addi $13, $0, 384
+	jal endpxy11
+
+ebarro:	beq $13, $0, ebarro2
+	ori $9, $0, 0xBC8F8F
+	sw $9, 0($22) #armazena no endereço $2(calculado na rotina)
+	addi $22, $22, 4
+	ori $9, $0, 0xA0522D
+	sw $9, 0($22) #armazena no endereço $2(calculado na rotina)
+	addi $22, $22, 16
+	addi $13, $13, -1
+	j ebarro
+
+ebarro2:
+	lui $4, 0x1001
+	addi $5, $0, 7 #linha em que quer que ponto esteja (l)
+	addi $6, $0, 1024 #quantidade de UG de linhas (L)
+	addi $7, $0, 0 #quantidade de colunas até chegar no ponto
+	addi $13, $0, 384
+	jal endpxy11
+	
+loop3:	beq $13, $0, stilingue1
+	ori $9, $0, 0x8B4513
+	sw $9, 0($22) #armazena no endereço $2(calculado na rotina)
+	addi $22, $22, 4
+	ori $9, $0, 0xBC8F8F
+	sw $9, 0($22) #armazena no endereço $2(calculado na rotina)
+	addi $22, $22, 8
+	addi $13, $13, -1
+	j loop3
 stilingue1:
 	lui $4, 0x1001
 	addi $5, $0, 5 #linha em que quer que ponto esteja (l)
@@ -359,4 +397,12 @@ endpxy10:
 	sll $8, $8, 2 # $8 = (l * L +c) *4
 	add $21, $8, $4 # $2 = $8 +&p
 fimendpxy10:
+	jr $31 #fim da rotinha
+
+endpxy11:
+	mul $8, $5, $6 # 8= l*L
+	add $8, $8, $7 #$8 = l*L+c
+	sll $8, $8, 2 # $8 = (l * L +c) *4
+	add $22, $8, $4 # $2 = $8 +&p
+fimendpxy11:
 	jr $31 #fim da rotinha
