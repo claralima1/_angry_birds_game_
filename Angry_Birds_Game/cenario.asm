@@ -106,7 +106,7 @@ efeitobarro:
 
 
 efeitograma:
-	ori $9, $0, 0x228B22
+	ori $9, $0, 0x2E8B57
 	sw $9, 4($2) #armazena no endereço $2(calculado na rotina)
 	sw $9, 16($2)
 	sw $9, 20($2)
@@ -303,10 +303,9 @@ bloco1:
 	addi $7, $0, 72 #quantidade de colunas até chegar no ponto
 	addi $15, $0, 15
 	jal endpxy9
-	ori $9, $0, 0xd2691e
+	ori $9, $0, 0xCD853F
 	sw $9, 0($20) #armazena no endereço $12(calculado na rotina)
 	addi $20, $20, 4
-	ori $9, $0, 0xd2691e
 	sw $9, 0($20) #armazena no endereço $12(calculado na rotina)
 	j blocop1
 
@@ -314,10 +313,9 @@ blocop1:
 	beq $15, $0, blocopp2
 	lui $4, 0x1001
 	addi $20, $20, 508
-	ori $9, $0, 0xd2691e
+	ori $9, $0, 0xCD853F
 	sw $9, 0($20) #armazena no endereço $12(calculado na rotina)
 	addi $20, $20, 4
-	ori $9, $0, 0xd2691e
 	sw $9, 0($20) #armazena no endereço $12(calculado na rotina)
 	addi $15, $15, -1
 	j blocop1
@@ -329,10 +327,9 @@ blocopp2:
 	addi $7, $0, 92 #quantidade de colunas até chegar no ponto
 	addi $15, $0, 15
 	jal endpxy10
-	ori $9, $0, 0xd2691e
+	ori $9, $0, 0xCD853F
 	sw $9, 0($21) #armazena no endereço $12(calculado na rotina)
 	addi $21, $21, 4
-	ori $9, $0, 0xd2691e
 	sw $9, 0($21) #armazena no endereço $12(calculado na rotina)
 	j blocop2
 
@@ -340,10 +337,9 @@ blocop2:
 	beq $15, $0, bordabloco
 	lui $4, 0x1001
 	addi $21, $21, 508
-	ori $9, $0, 0xd2691e
+	ori $9, $0, 0xCD853F
 	sw $9, 0($21) #armazena no endereço $12(calculado na rotina)
 	addi $21, $21, 4
-	ori $9, $0, 0xd2691e
 	sw $9, 0($21) #armazena no endereço $12(calculado na rotina)
 	addi $15, $15, -1
 	j blocop2
@@ -422,6 +418,121 @@ bordabloco:
 	sw $9, 22904($4)
 	sw $9, 23416($4)
 	sw $9, 23928($4)
+	#sw $9, 15632($4)
+	sw $9, 15636($4)
+	sw $9, 15640($4)
+	sw $9, 15644($4)
+	sw $9, 15648($4)
+	sw $9, 15652($4)
+	sw $9, 15656($4)
+	sw $9, 15660($4)
+	sw $9, 15664($4)
+	sw $9, 15668($4)
+	sw $9, 15672($4)
+	sw $9, 15676($4)
+	sw $9, 15680($4)
+	sw $9, 15684($4)
+	sw $9, 15688($4)
+	sw $9, 15692($4)
+	sw $9, 15696($4)
+	sw $9, 15700($4)
+	sw $9, 15704($4)
+	sw $9, 15708($4)
+	sw $9, 15712($4)
+	sw $9, 15716($4)
+	sw $9, 15720($4)
+	sw $9, 15724($4)
+	sw $9, 15728($4)
+	sw $9, 15732($4)
+	sw $9, 15736($4)
+	sw $9, 15740($4)
+	sw $9, 15744($4)
+	sw $9, 15232($4)
+	sw $9, 14720($4)
+	sw $9, 14208($4)
+	sw $9, 14204($4)
+	sw $9, 14200($4)
+	sw $9, 14196($4)
+	sw $9, 14192($4)
+	sw $9, 14188($4)
+	sw $9, 14184($4)
+	sw $9, 14180($4)
+	sw $9, 14176($4)
+	sw $9, 14172($4)
+	sw $9, 14168($4)
+	sw $9, 14164($4)
+	sw $9, 14160($4)
+	sw $9, 14156($4)
+	sw $9, 14152($4)
+	sw $9, 14148($4)
+	sw $9, 14144($4)
+	sw $9, 14140($4)
+	sw $9, 14136($4)
+	sw $9, 14132($4)
+	sw $9, 14128($4)
+	sw $9, 14124($4)
+	sw $9, 14120($4)
+	sw $9, 14116($4)
+	sw $9, 14112($4)
+	sw $9, 14108($4)
+	sw $9, 14104($4)
+	sw $9, 14100($4)
+	sw $9, 14612($4)
+	sw $9, 15124($4)
+	
+	ori $9, $0, 0xCD853F
+	sw $9, 14616($4)
+	sw $9, 15128($4)#segundalinha
+	sw $9, 15132($4)
+	sw $9, 14620($4)
+	sw $9, 14624($4)
+	sw $9, 14628($4)
+	sw $9, 14632($4)
+	sw $9, 14636($4)
+	sw $9, 14640($4)
+	sw $9, 14644($4)
+	sw $9, 14648($4)
+	sw $9, 14652($4)
+	sw $9, 14656($4)
+	sw $9, 14660($4)
+	sw $9, 14664($4)
+	sw $9, 14668($4)
+	sw $9, 14672($4)
+	sw $9, 14676($4)
+	sw $9, 14680($4)
+	sw $9, 14684($4)
+	sw $9, 14688($4)
+	sw $9, 14692($4)
+	sw $9, 14696($4)
+	sw $9, 14700($4)
+	sw $9, 14704($4)
+	sw $9, 14708($4)
+	sw $9, 14712($4)
+	sw $9, 14716($4)
+	sw $9, 15136($4)
+	sw $9, 15140($4)
+	sw $9, 15144($4)
+	sw $9, 15148($4)
+	sw $9, 15152($4)
+	sw $9, 15156($4)
+	sw $9, 15160($4)
+	sw $9, 15164($4)
+	sw $9, 15168($4)
+	sw $9, 15172($4)
+	sw $9, 15176($4)
+	sw $9, 15180($4)
+	sw $9, 15184($4)
+	sw $9, 15188($4)
+	sw $9, 15192($4)
+	sw $9, 15196($4)
+	sw $9, 15200($4)
+	sw $9, 15204($4)
+	sw $9, 15208($4)
+	sw $9, 15212($4)
+	sw $9, 15216($4)
+	sw $9, 15220($4)
+	sw $9, 15224($4)
+	sw $9, 15228($4)
 	
 	addi $2, $0, 10
 fim:	syscall
