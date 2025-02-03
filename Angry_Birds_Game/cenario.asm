@@ -183,7 +183,6 @@ efeitobarro:
 	sw $9, 1508($2)
 
 
-
 efeitograma:
 	ori $9, $0, 0x2E8B57
 	sw $9, 4($2) #armazena no endereço $2(calculado na rotina)
@@ -1412,25 +1411,230 @@ estrelas:
 	sw $9, 9448($4)
 	sw $9, 9576($4)
 	sw $9, 9704($4)
-	sw $9, 12808($4)
-	sw $9, 12872($4)
-	sw $9, 12936($4)
-	sw $9, 13000($4)
-	sw $9, 13256($4)
-	sw $9, 15472($4)
-	sw $9, 15520($4)
-	sw $9, 15584($4)
-	sw $9, 15776($4)
-	sw $9, 15840($4)
-	sw $9, 19936($4)
-	sw $9, 19872($4)
-	sw $9, 19712($4)
-	sw $9, 19648($4)
-	sw $9, 19584($4)
-	sw $9, 19536($4)
-	sw $9, 22632($4)
-	sw $9, 22976($4)
 	
+apagar_bird:
+	ori $9, $0, 0x4B0082
+	sw $9, 19984($4)
+	sw $9, 19472($4)
+	sw $9, 18964($4)
+	sw $9, 18456($4)
+	sw $9, 17948($4)
+	sw $9, 17440($4)
+	sw $9, 17444($4)
+	sw $9, 20496($4)
+	sw $9, 21012($4)
+	sw $9, 21528($4)
+	sw $9, 21532($4)
+	sw $9, 21536($4)
+	sw $9, 21540($4)
+	sw $9, 21544($4)
+	sw $9, 21548($4)
+	sw $9, 21040($4)
+	sw $9, 21044($4)
+	sw $9, 20536($4)
+	sw $9, 20024($4)
+	sw $9, 19508($4)
+	sw $9, 18992($4)
+	sw $9, 18480($4)
+	sw $9, 17964($4)
+	sw $9, 17448($4)
+	sw $9, 16928($4)
+	sw $9, 16932($4)
+	sw $9, 17436($4)
+	sw $9, 17432($4)
+	sw $9, 16920($4)
+	sw $9, 16924($4)
+	sw $9, 16408($4)
+	sw $9, 16412($4)
+	sw $9, 16416($4)
+	sw $9, 15900($4)
+	sw $9, 15892($4)
+	sw $9, 15888($4)
+	sw $9, 16404($4)
+	sw $9, 17428($4)
+	sw $9, 17424($4)
+	sw $9, 19468($4)
+	sw $9, 19980($4)
+	sw $9, 20488($4)
+	sw $9, 20484($4)
+	sw $9, 19464($4)
+	sw $9, 18952($4)
+	sw $9, 19988($4)
+	sw $9, 19992($4)
+	sw $9, 19996($4)
+	sw $9, 20000($4)
+	sw $9, 20004($4)
+	sw $9, 20008($4)
+	sw $9, 20012($4)
+	sw $9, 20016($4)
+	sw $9, 20020($4)
+	sw $9, 20532($4)
+	sw $9, 20528($4)
+	sw $9, 20524($4)
+	sw $9, 20520($4)
+	sw $9, 20516($4)
+	sw $9, 20512($4)
+	sw $9, 20508($4)
+	sw $9, 20504($4)
+	sw $9, 20500($4)
+	sw $9, 21016($4)
+	sw $9, 21020($4)
+	sw $9, 21024($4)
+	sw $9, 21028($4)
+	sw $9, 21032($4)
+	sw $9, 21036($4)
+	sw $9, 19476($4)
+	sw $9, 19480($4)
+	sw $9, 19484($4)
+	sw $9, 19488($4)
+	sw $9, 19492($4)
+	sw $9, 19496($4)
+	sw $9, 19500($4)
+	sw $9, 19504($4)
+	sw $9, 18988($4)
+	sw $9, 18984($4)
+	sw $9, 18980($4)
+	sw $9, 18976($4)
+	sw $9, 18972($4)
+	sw $9, 18968($4)
+	sw $9, 18460($4)
+	sw $9, 18460($4)
+	sw $9, 18464($4)
+	sw $9, 18468($4)
+	sw $9, 18472($4)
+	sw $9, 18476($4)
+	sw $9, 17960($4)
+	sw $9, 17956($4)
+	sw $9, 17952($4)
+	sw $9, 18972($4)
+	sw $9, 18968($4)
+	sw $9, 19488($4)
+	sw $9, 19492($4)
+	sw $9, 19500($4)
+	sw $9, 19504($4)
+	sw $9, 18996($4)
+	sw $9, 20016($4)
+	sw $9, 20012($4)
+	sw $9, 20020($4)
+	sw $9, 20532($4)
+	sw $9, 20000($4)
+	sw $9, 19996($4)
+	sw $9, 20004($4)
+	sw $9, 20512($4)
+	sw $9, 20508($4)
+	sw $9, 20520($4)
+	sw $9, 20524($4)
+	sw $9, 20528($4)
+	sw $9, 20532($4)
+	sw $9, 21036($4)
+	sw $9, 21040($4)
+	sw $9, 21032($4)
+	sw $9, 21028($4)
+	sw $9, 21024($4)
+	sw $9, 21020($4)
+	sw $9, 21016($4)
+	sw $9, 20516($4)
+
+stilingue_ap:
+	lui $4, 0x1001
+	addi $5, $0, 5 #linha em que quer que ponto esteja (l)
+	addi $6, $0, 1024 #quantidade de UG de linhas (L)
+	addi $7, $0, 7 #quantidade de colunas até chegar no ponto
+	addi $15, $0, 7
+	jal endpxy3
+	ori $9, $0, 0x8b4513
+	sw $9, 0($12) #armazena no endereço $12(calculado na rotina)
+	addi $12, $12, 4
+	sw $9, 0($12) #armazena no endereço $12(calculado na rotina)
+	j stilingue_ap2
+
+stilingue_ap2:
+	beq $15, $0, stilingue_ap3
+	lui $4, 0x1001
+	addi $12, $12, 508
+	sw $9, 0($12) #armazena no endereço $12(calculado na rotina)
+	addi $12, $12, 4
+	sw $9, 0($12) #armazena no endereço $12(calculado na rotina)
+	addi $15, $15, -1
+	j stilingue_ap2
+	
+stilingue_ap3:
+	lui $4, 0x1001
+	addi $5, $0, 4 #linha em que quer que ponto esteja (l)
+	addi $6, $0, 1024 #quantidade de UG de linhas (L)
+	addi $7, $0, 2 #quantidade de colunas até chegar no ponto
+	addi $15, $0, 7
+	jal endpxy5
+	sw $9, 0($16) #armazena no endereço $12(calculado na rotina)
+	addi $16, $16, 4
+	sw $9, 0($16) #armazena no endereço $12(calculado na rotina)
+	j stilingue_ap4
+
+stilingue_ap4:
+	beq $15, $0, espacoest_ap1
+	lui $4, 0x1001
+	addi $16, $16, 508
+	ori $9, $0, 0x8b4513
+	sw $9, 0($16) #armazena no endereço $12(calculado na rotina)
+	addi $16, $16, 4
+	sw $9, 0($16) #armazena no endereço $12(calculado na rotina)
+	addi $15, $15, -1
+	j stilingue_ap4
+	
+espacoest_ap1:
+	lui $4, 0x1001
+	addi $5, $0, 5 #linha em que quer que ponto esteja (l)
+	addi $6, $0, 1024 #quantidade de UG de linhas (L)
+	addi $7, $0, 2 #quantidade de colunas até chegar no ponto
+	jal endpxy6
+	ori $9, $0, 0x8b4513
+	sw $9, 0($17) #armazena no endereço $2(calculado na rotina)
+	addi $17, $17, 4
+	sw $9, 0($17) #armazena no endereço $12(calculado na rotina)
+	addi $17, $17, 4
+	sw $9, 0($17) #armazena no endereço $12(calculado na rotina)
+	addi $17, $17, 4
+	sw $9, 0($17) #armazena no endereço $12(calculado na rotina)
+	addi $17, $17, 4
+	sw $9, 0($17) #armazena no endereço $12(calculado na rotina)
+	
+	lui $4, 0x1001
+	addi $5, $0, 5 #linha em que quer que ponto esteja (l)
+	addi $6, $0, 1024 #quantidade de UG de linhas (L)
+	addi $7, $0, 8 #quantidade de colunas até chegar no ponto
+	jal endpxy7
+	sw $9, 0($18) #armazena no endereço $2(calculado na rotina)
+	addi $18, $18, 4
+	sw $9, 0($18) #armazena no endereço $12(calculado na rotina)
+	addi $18, $18, 4
+	sw $9, 0($18) #armazena no endereço $12(calculado na rotina)
+	addi $18, $18, 4
+	sw $9, 0($18) #armazena no endereço $12(calculado na rotina)
+	addi $18, $18, 4
+	sw $9, 0($18) #armazena no endereço $12(calculado na rotina)
+	addi $18, $18, 4
+	sw $9, 0($18) #armazena no endereço $12(calculado na rotina)
+	lui $4, 0x1001
+	addi $5, $0, 4 #linha em que quer que ponto esteja (l)
+	addi $6, $0, 1024 #quantidade de UG de linhas (L)
+	addi $7, $0, 12 #quantidade de colunas até chegar no ponto
+	addi $15, $0, 7
+	jal endpxy8
+	sw $9, 0($19) #armazena no endereço $12(calculado na rotina)
+	addi $19, $19, 4
+	sw $9, 0($19) #armazena no endereço $12(calculado na rotina)
+
+stilingue_ap5:
+	beq $15, $0, fim
+	lui $4, 0x1001
+	addi $19, $19, 508
+	ori $9, $0, 0x8b4513
+	sw $9, 0($19) #armazena no endereço $12(calculado na rotina)
+	addi $19, $19, 4
+	ori $9, $0, 0x8b4513
+	sw $9, 0($19) #armazena no endereço $12(calculado na rotina)
+	addi $15, $15, -1
+	j stilingue_ap5		
 			
 	addi $2, $0, 10
 fim:	syscall
